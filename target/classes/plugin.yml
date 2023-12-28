@@ -1,0 +1,9 @@
+name: ElkoyJoinLeave
+version: 1.0.0
+main: gg.morphie.elkoyjoinleave.ElkoyJoinLeave
+author: Morphie
+api-version: 1.19
+commands:
+  messages:
+    description: Main command for the ElkoyJoinLeave plugin.
+    usage: /<command>

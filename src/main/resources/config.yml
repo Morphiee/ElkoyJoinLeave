@@ -1,0 +1,67 @@
+#============================================================================================================================|
+# ___________.__   __                    ____.      .__       .____
+# \_   _____/|  | |  | ______ ___.__.   |    | ____ |__| ____ |    |    ____ _____ ___  __ ____
+#  |    __)_ |  | |  |/ /  _ <   |  |   |    |/  _ \|  |/    \|    |  _/ __ \\__  \\  \/ // __ \
+#  |        \|  |_|    <  <_> )___  /\__|    (  <_> )  |   |  \    |__\  ___/ / __ \\   /\  ___/
+# /_______  /|____/__|_ \____// ____\________|\____/|__|___|  /_______ \___  >____  /\_/  \___  >
+#         \/           \/     \/                            \/        \/   \/     \/          \/
+#============================================================================================================================|
+#
+# Author's Discord: morphie
+#
+#============================================================================================================================|
+
+Settings:
+  # Should the plugin automatically delete player data files within the ShopHistory/PlayerData files folder? (This system is in
+  # place to help trim files of players who may never rejoin the server.)
+  AutoDeletePlayerFiles:
+    Enabled: false
+    # Number of days a player has to be offline before attempting to remove their player file.
+    DaysTillDeletion: 30
+
+#============================================================================================================================|
+
+# JOIN MESSAGES
+
+# This will be the join message that is used at default.
+DefaultJoinMessage: "&8&l[&a&l✔&8&l] &a%PLAYER%"
+
+JoinMessages:
+  - "&a&l%PLAYER% came in swinging!"
+  - "&a&lEverything is always better with %PLAYER%"
+
+#============================================================================================================================|
+
+# LEAVE MESSAGES
+
+# This will be the leave message that is used at default.
+DefaultLeaveMessage: "&8&l[&c&l✗&8&l] &c%PLAYER%"
+
+LeaveMessages:
+  - "&c&l%PLAYER% bit the dust!"
+  - "&c&l%PLAYER% used ALT + F4"
+
+#============================================================================================================================|
+
+# GUI
+
+# GUI Setup is how you dictate the amount of rows or "slots" the gui will have. Right now the below setup is for 5 rows of 7
+# items with the 6th row containing 3 items. The gui must contain at least 1 of every character below.
+# g = join/leave message for the player to set.
+# ( = page back button.
+# ) = page forward button.
+# 1 = GUI filter button.
+# The spaces in the GUI are "Filler" spaces. They will be filled in with whatever is set in the "FillerItem:" option below.
+GuiSetup: [" ggggggg ", " ggggggg ", " ggggggg ", " ggggggg ", " ggggggg ", "  ( 1 )  "]
+FillerItem:
+  CustomModelID: 0
+  ItemName: "GRAY_STAINED_GLASS_PANE"
+PreviousPageItem:
+  CustomModelID: 0
+  ItemName: "ARROW"
+NextPageItem:
+  CustomModelID: 0
+  ItemName: "ARROW"
+FilterItem:
+  CustomModelID: 0
+  ItemName: "ARROW"

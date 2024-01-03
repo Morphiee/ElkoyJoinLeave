@@ -24,22 +24,24 @@ Settings:
 # JOIN MESSAGES
 
 # This will be the join message that is used at default.
+# The message will end after a : from there you can define a material that you want the item to be in the menu.
 DefaultJoinMessage: "&8&l[&a&l✔&8&l] &a%PLAYER%"
 
 JoinMessages:
-  - "&a&l%PLAYER% came in swinging!"
-  - "&a&lEverything is always better with %PLAYER%"
+  - "&a&l%PLAYER% came in swinging!:PAPER:1"
+  - "&a&lEverything is always better with %PLAYER%:PAPER:1"
 
 #============================================================================================================================|
 
 # LEAVE MESSAGES
 
 # This will be the leave message that is used at default.
+# The message will end after a : from there you can define a material that you want the item to be in the menu.
 DefaultLeaveMessage: "&8&l[&c&l✗&8&l] &c%PLAYER%"
 
 LeaveMessages:
-  - "&c&l%PLAYER% bit the dust!"
-  - "&c&l%PLAYER% used ALT + F4"
+  - "&c&l%PLAYER% bit the dust!:PAPER:1"
+  - "&c&l%PLAYER% used ALT + F4:PAPER:1"
 
 #============================================================================================================================|
 

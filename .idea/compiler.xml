@@ -9,8 +9,5 @@
         <module name="ElkoyJoinLeave" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="ElkoyJoinLeave" target="16" />
-    </bytecodeTargetLevel>
   </component>
 </project>

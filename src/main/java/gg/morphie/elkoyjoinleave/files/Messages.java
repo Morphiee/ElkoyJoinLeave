@@ -75,20 +75,31 @@ public class Messages implements Listener {
         cfg.addDefault("ErrorPrefix", "&8&l[&c&l!&8&l] ");
         cfg.addDefault("ConsoleSenderError", "&cOnly a player can send this message!");
         cfg.addDefault("NoPermsMessage", "&cInvalid permissions!");
+        cfg.addDefault("ReloadMessage", "&aPlugin has been successfully reloaded!");
 
         // GUI Messages
         cfg.addDefault("Menu.Title", "&9&lElkoyJoinLeave Messages");
         cfg.addDefault("Menu.NextPageItem", "&aGo to Next Page &8&l>>");
         cfg.addDefault("Menu.PreviousPageItem", "&8&l<< &aGo to Previous Page");
-        cfg.addDefault("Menu.FilterItem.Title", "&3&lMenu Filter &7(&a%CURRENT_FILTER%&7)");
+        cfg.addDefault("Menu.FilterItem.Title", "&9&lMenu Filter &7(&a%CURRENT_FILTER%&7)");
+        cfg.addDefault("Menu.JoinItem.Title", "&9%MESSAGE% &8(&a&lJOIN&8)");
+        cfg.addDefault("Menu.LeaveItem.Title", "&9%MESSAGE% &8(&a&lLEAVE&8)");
+        List<String> list = new ArrayList<String>();
+        list.add(" ");
+        list.add("&3&lCurrent Filter Tag:");
+        list.add("&b&l| &7%ALL%");
+        list.add("&b&l| &7%JOIN%");
+        list.add("&b&l| &7%LEAVE%");
+        list.add(" ");
+        list.add("&b➥ Click to change the current menu filter");
+        cfg.addDefault("Menu.FilterItem.Lore", list);
         List<String> list2 = new ArrayList<String>();
         list2.add(" ");
-        list2.add("&3&lCurrent Filter Tag:");
-        list2.add("&b&l| &7%ALL%");
-        list2.add("&b&l| &7%JOIN%");
-        list2.add("&b&l| &7%LEAVE%");
-        list2.add(" ");
-        list2.add("&b➥ Click to change the current menu filter");
-        cfg.addDefault("Menu.FilterItem.Lore", list2);
+        list2.add("&b➥ Click to set this as your &3Join &bmessage.");
+        cfg.addDefault("Menu.JoinItem.Lore", list2);
+        List<String> list3 = new ArrayList<String>();
+        list3.add(" ");
+        list3.add("&b➥ Click to set this as your &3Leave &bmessage.");
+        cfg.addDefault("Menu.JoinItem.Lore", list3);
     }
 }

@@ -32,7 +32,7 @@ public class PlayerDataEvents implements Listener {
                 File file = getData(uuid);
                 FileConfiguration pd = YamlConfiguration.loadConfiguration(file);
                 if (!pd.contains("CurrentFilter")) {
-                    pd.set("CurrentFilter", "Join");
+                    pd.set("CurrentFilter", "All");
                     try {
                         pd.save(file);
                     } catch (IOException e) {

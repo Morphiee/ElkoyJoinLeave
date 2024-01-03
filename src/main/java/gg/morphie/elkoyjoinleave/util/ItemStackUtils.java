@@ -16,6 +16,8 @@ public class ItemStackUtils {
         this.plugin = plugin;
     }
 
+    ItemMeta lastMeta;
+
     public ItemStack createItem(String paramString1, int paramInt, int paramInt2, String paramString2, ArrayList<String> paramArrayList, boolean paramBoolean) {
         ItemStack localItemStack = new ItemStack(Material.matchMaterial(paramString1), paramInt);
         ItemMeta localItemMeta = localItemStack.getItemMeta();
@@ -30,6 +32,12 @@ public class ItemStackUtils {
         localItemMeta.setLore(paramArrayList);
         localItemMeta.setCustomModelData(paramInt2);
         localItemStack.setItemMeta(localItemMeta);
+
+        lastMeta = localItemMeta;
         return localItemStack;
+    }
+
+    public ItemMeta getMeta() {
+        return lastMeta;
     }
 }

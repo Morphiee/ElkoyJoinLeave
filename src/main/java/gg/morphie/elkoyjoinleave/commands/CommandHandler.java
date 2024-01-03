@@ -1,6 +1,7 @@
 package gg.morphie.elkoyjoinleave.commands;
 
 import gg.morphie.elkoyjoinleave.ElkoyJoinLeave;
+import gg.morphie.elkoyjoinleave.commands.admincommands.ReloadCommand;
 import gg.morphie.elkoyjoinleave.commands.playercommands.MenuCommand;
 import gg.morphie.elkoyjoinleave.util.StringUtils;
 import org.bukkit.command.Command;
@@ -20,12 +21,16 @@ public class CommandHandler implements CommandExecutor {
         if (cmd.getName().equalsIgnoreCase("messages")) {
             if (args.length == 0) {
                 //player only
-                if (sender instanceof Player) {
-                    Player player = (Player) sender;
-                    new MenuCommand(plugin).openMenu(player);
+                if (sender instanceof Player player) {
+                    new MenuCommand(this.plugin).openMenu(player);
                 } else {
                     sender.sendMessage(new StringUtils().addColor(plugin.getMessage("ErrorPrefix") + plugin.getMessage("ConsoleSenderError")));
                 }
+                return true;
+            } else if (args[0].equalsIgnoreCase("reload")) {
+                // Player and Console
+                Player player = (Player) sender;
+                new ReloadCommand(this.plugin).reloadPlugin(player);
                 return true;
             }
         }

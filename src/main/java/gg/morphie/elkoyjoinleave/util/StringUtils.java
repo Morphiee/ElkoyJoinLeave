@@ -2,6 +2,8 @@ package gg.morphie.elkoyjoinleave.util;
 
 import net.md_5.bungee.api.ChatColor;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -9,7 +11,7 @@ import static org.bukkit.ChatColor.COLOR_CHAR;
 
 public class StringUtils {
 
-    public java.lang.String addColor(java.lang.String message) {
+    public String addColor(String message) {
         if (message == null) {
             return null;
         }
@@ -32,5 +34,13 @@ public class StringUtils {
             );
         }
         return matcher.appendTail(buffer).toString();
+    }
+
+    public String listToString(ArrayList<String> list) {
+        StringBuilder newLore = new StringBuilder();
+        for (String s : list) {
+            newLore.append("\n").append(s);
+        }
+        return newLore.toString();
     }
 }

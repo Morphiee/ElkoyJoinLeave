@@ -1,4 +1,5 @@
 name: ElkoyJoinLeave
+description: A plugin that allows players to set their own join or leave message.
 version: 1.0.0
 main: gg.morphie.elkoyjoinleave.ElkoyJoinLeave
 author: Morphie

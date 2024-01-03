@@ -31,19 +31,19 @@ public class MenuFilterManager {
 
     public String getTag(String string, UUID uuid) {
         switch (string) {
-            case "ALL":
+            case "All":
                 if (getPlayerTag(uuid).equals(string)) {
                     return "&a" + getPlayerTag(uuid);
                 } else {
                     return "&7All";
                 }
-            case "JOIN":
+            case "Join":
                 if (getPlayerTag(uuid).equals(string)) {
                     return "&a" + getPlayerTag(uuid);
                 } else {
                     return "&7Join";
                 }
-            case "LEAVE":
+            case "Leave":
                 if (getPlayerTag(uuid).equals(string)) {
                     return "&a" + getPlayerTag(uuid);
                 } else {

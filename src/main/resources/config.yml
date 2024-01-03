@@ -18,6 +18,11 @@ Settings:
     Enabled: false
     # Number of days a player has to be offline before attempting to remove their player file.
     DaysTillDeletion: 30
+  # Set the color of misc things withing the plugin.
+  Colors:
+    FilterSelectColor: "&a"
+    UnlockedStatusColor: "&a&l"
+    LockedStatusColor: "&c&l"
 
 #============================================================================================================================|
 
@@ -54,7 +59,7 @@ LeaveMessages:
 # ) = page forward button.
 # 1 = GUI filter button.
 # The spaces in the GUI are "Filler" spaces. They will be filled in with whatever is set in the "FillerItem:" option below.
-GuiSetup: [" ggggggg ", " ggggggg ", " ggggggg ", " ggggggg ", " ggggggg ", "  ( 1 )  "]
+GuiSetup: ["ggggggggg", "ggggggggg", "ggggggggg", "ggggggggg", " (  1  ) "]
 FillerItem:
   CustomModelID: 0
   ItemName: "GRAY_STAINED_GLASS_PANE"
@@ -67,3 +72,11 @@ NextPageItem:
 FilterItem:
   CustomModelID: 0
   ItemName: "ARROW"
+
+  # Below you can determine if you want the messages to have a different material when they are locked.
+  # You can also change the name and lore of the locked version in the messages.yml.
+  LockMessages:
+    Enable: true
+    Glow: true
+    Material: 'BARRIER'
+    CustomModelID: 0

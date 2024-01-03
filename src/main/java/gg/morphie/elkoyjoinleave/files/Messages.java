@@ -82,8 +82,6 @@ public class Messages implements Listener {
         cfg.addDefault("Menu.NextPageItem", "&aGo to Next Page &8&l>>");
         cfg.addDefault("Menu.PreviousPageItem", "&8&l<< &aGo to Previous Page");
         cfg.addDefault("Menu.FilterItem.Title", "&9&lMenu Filter &7(&a%CURRENT_FILTER%&7)");
-        cfg.addDefault("Menu.JoinItem.Title", "&9%MESSAGE% &8(&a&lJOIN&8)");
-        cfg.addDefault("Menu.LeaveItem.Title", "&9%MESSAGE% &8(&a&lLEAVE&8)");
         List<String> list = new ArrayList<String>();
         list.add(" ");
         list.add("&3&lCurrent Filter Tag:");
@@ -93,13 +91,25 @@ public class Messages implements Listener {
         list.add(" ");
         list.add("&b➥ Click to change the current menu filter");
         cfg.addDefault("Menu.FilterItem.Lore", list);
-        List<String> list2 = new ArrayList<String>();
-        list2.add(" ");
-        list2.add("&b➥ Click to set this as your &3Join &bmessage.");
-        cfg.addDefault("Menu.JoinItem.Lore", list2);
         List<String> list3 = new ArrayList<String>();
         list3.add(" ");
-        list3.add("&b➥ Click to set this as your &3Leave &bmessage.");
-        cfg.addDefault("Menu.JoinItem.Lore", list3);
+        list3.add("&b&l| &3&lType&8: %TYPE%");
+        list3.add(" ");
+        list3.add("&b&l| &3&lMessage Preview&8:");
+        list3.add("%MESSAGE%");
+        list3.add(" ");
+        list3.add("&b➥ Click to set this as your %TYPE% &bmessage.");
+        cfg.addDefault("Menu.MessageItem.Lore", list3);
+        cfg.addDefault("Menu.LockedItem.Title", "&c&l%TITLE% &8(%STATUS%&8)");
+        List<String> list4 = new ArrayList<String>();
+        list4.add(" ");
+        list4.add("&b&l| &3&lType&8: %TYPE%");
+        list4.add(" ");
+        list4.add("&aYou can unlock this message");
+        list4.add("&avia /coinshop command.");
+        list4.add(" ");
+        list4.add("&b&l| &3&lMessage Preview&8:");
+        list4.add("%MESSAGE%");
+        cfg.addDefault("Menu.LockedItem.lore", list4);
     }
 }

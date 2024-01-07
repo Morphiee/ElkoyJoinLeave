@@ -60,12 +60,12 @@ public class Messages implements Listener {
 
     private void addDefaults(FileConfiguration cfg) {
         // Start up Messages for console
-        cfg.addDefault("Startup.Line1", " &9___________      ____.____ ");
-        cfg.addDefault("Startup.Line2", "&9\\_   _____/     |    |    |          &aPlugin Version&8: &b" + this.plugin.Version);
-        cfg.addDefault("Startup.Line3", "  &9|    __)_     |    |    |          &aAuthor&8: &bMorphie");
-        cfg.addDefault("Startup.Line4", "  &9|        \\/\\__|    |    |___");
-        cfg.addDefault("Startup.Line5", " &9/_______  /\\________|_______ \\");
-        cfg.addDefault("Startup.Line6", "        &9\\/                  \\/");
+        cfg.addDefault("Startup.Line1", " &3___________      ____.____ ");
+        cfg.addDefault("Startup.Line2", "&3\\_   _____/     |    |    |          &aPlugin Version&8: &b" + this.plugin.Version);
+        cfg.addDefault("Startup.Line3", "  &3|    __)_     |    |    |          &aAuthor&8: &bMorphie");
+        cfg.addDefault("Startup.Line4", "  &3|        \\/\\__|    |    |___");
+        cfg.addDefault("Startup.Line5", " &3/_______  /\\________|_______ \\");
+        cfg.addDefault("Startup.Line6", "        &3\\/                  \\/");
         cfg.addDefault("Startup.Line7", "______________________________________________________________________");
         cfg.addDefault("Startup.Config", "&aConfig&7: &2Loaded");
         cfg.addDefault("Startup.GenConfig", "&aConfig&7: &bGenerating");
@@ -78,10 +78,10 @@ public class Messages implements Listener {
         cfg.addDefault("ReloadMessage", "&aPlugin has been successfully reloaded!");
 
         // GUI Messages
-        cfg.addDefault("Menu.Title", "&9&lElkoyJoinLeave Messages");
+        cfg.addDefault("Menu.Title", "&3&lElkoyJoinLeave Messages");
         cfg.addDefault("Menu.NextPageItem", "&aGo to Next Page &8&l>>");
         cfg.addDefault("Menu.PreviousPageItem", "&8&l<< &aGo to Previous Page");
-        cfg.addDefault("Menu.FilterItem.Title", "&9&lMenu Filter &7(&a%CURRENT_FILTER%&7)");
+        cfg.addDefault("Menu.FilterItem.Title", "&3&lMenu Filter &8(&a%CURRENT_FILTER%&8)");
         List<String> list = new ArrayList<String>();
         list.add(" ");
         list.add("&3&lCurrent Filter Tag:");
@@ -91,6 +91,7 @@ public class Messages implements Listener {
         list.add(" ");
         list.add("&b➥ Click to change the current menu filter");
         cfg.addDefault("Menu.FilterItem.Lore", list);
+        cfg.addDefault("Menu.MessageItem.Title", "&3&l%TITLE% &8(%STATUS%&8)");
         List<String> list3 = new ArrayList<String>();
         list3.add(" ");
         list3.add("&b&l| &3&lType&8: %TYPE%");

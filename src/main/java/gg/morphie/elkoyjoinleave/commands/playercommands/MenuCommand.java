@@ -14,7 +14,7 @@ public class MenuCommand {
 
     public void openMenu(Player player) {
         if (!player.isSleeping()) {
-            if (player.hasPermission("elkoyjoinleave.menu")) {
+            if (player.hasPermission("elcore.messages.menu")) {
                 new MainMenu(plugin).openGUI(player);
             } else {
                 player.sendMessage(new StringUtils().addColor(this.plugin.getMessage("ErrorPrefix") + this.plugin.getMessage("NoPermsMessage")));

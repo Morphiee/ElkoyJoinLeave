@@ -18,30 +18,39 @@ Settings:
     Enabled: false
     # Number of days a player has to be offline before attempting to remove their player file.
     DaysTillDeletion: 30
+  # Set the color of misc things withing the plugin.
+  Colors:
+    FilterSelectColor: "&a"
+    UnlockedStatusColor: "&a&l"
+    LockedStatusColor: "&c&l"
+    JoinColor: "&a&l"
+    LeaveColor: "&c&l"
 
 #============================================================================================================================|
 
 # JOIN MESSAGES
 
 # This will be the join message that is used at default.
-# The message will end after a : from there you can define a material that you want the item to be in the menu.
 DefaultJoinMessage: "&8&l[&a&l✔&8&l] &a%PLAYER%"
 
+# The messages below are formatted as so. "TITLE:MESSAGE:MATERIAL:MODELID:PERMISSION"
+# PERMISSION is elcore.messages.PERMISSION
 JoinMessages:
-  - "&a&l%PLAYER% came in swinging!:PAPER:1"
-  - "&a&lEverything is always better with %PLAYER%:PAPER:1"
+  - "&3&lSwinging:&a&l%PLAYER% came in swinging!:PAPER:1:swinging"
+  - "&3&lBetter:&a&lEverything is always better with %PLAYER%:PAPER:1:better"
 
 #============================================================================================================================|
 
 # LEAVE MESSAGES
 
 # This will be the leave message that is used at default.
-# The message will end after a : from there you can define a material that you want the item to be in the menu.
 DefaultLeaveMessage: "&8&l[&c&l✗&8&l] &c%PLAYER%"
 
+# The messages below are formatted as so. "TITLE:MESSAGE:MATERIAL:MODELID:PERMISSION"
+# PERMISSION is elcore.messages.PERMISSION
 LeaveMessages:
-  - "&c&l%PLAYER% bit the dust!:PAPER:1"
-  - "&c&l%PLAYER% used ALT + F4:PAPER:1"
+  - "&3&lDust:&c&l%PLAYER% bit the dust!:PAPER:1:dust"
+  - "&3&lALT+F4:&c&l%PLAYER% used ALT + F4:PAPER:1:altf4"
 
 #============================================================================================================================|
 
@@ -54,7 +63,7 @@ LeaveMessages:
 # ) = page forward button.
 # 1 = GUI filter button.
 # The spaces in the GUI are "Filler" spaces. They will be filled in with whatever is set in the "FillerItem:" option below.
-GuiSetup: [" ggggggg ", " ggggggg ", " ggggggg ", " ggggggg ", " ggggggg ", "  ( 1 )  "]
+GuiSetup: ["ggggggggg", "ggggggggg", "ggggggggg", "ggggggggg", " (  1  ) "]
 FillerItem:
   CustomModelID: 0
   ItemName: "GRAY_STAINED_GLASS_PANE"
@@ -67,3 +76,11 @@ NextPageItem:
 FilterItem:
   CustomModelID: 0
   ItemName: "ARROW"
+
+  # Below you can determine if you want the messages to have a different material when they are locked.
+  # You can also change the name and lore of the locked version in the messages.yml.
+  LockMessages:
+    Enable: true
+    Glow: true
+    Material: 'BARRIER'
+    CustomModelID: 0

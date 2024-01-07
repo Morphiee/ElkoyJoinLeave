@@ -14,7 +14,7 @@ public class ReloadCommand {
     }
 
     public void reloadPlugin(Player player) {
-        if (player.hasPermission("elkoyjoinleave.admin") || player.hasPermission("elkoyjoinleave.reload")  ) {
+        if (player.hasPermission("elcore.messages.admin") || player.hasPermission("elcore.messages.reload")  ) {
             Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("ShopHistory");
             if (this.plugin != null) {
                 this.plugin.reloadConfig();

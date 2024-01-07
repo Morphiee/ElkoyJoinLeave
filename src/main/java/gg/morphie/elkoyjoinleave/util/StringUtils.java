@@ -1,6 +1,7 @@
 package gg.morphie.elkoyjoinleave.util;
 
 import net.md_5.bungee.api.ChatColor;
+import org.bukkit.Bukkit;
 
 import java.util.ArrayList;
 import java.util.regex.Matcher;
@@ -14,17 +15,16 @@ public class StringUtils {
         if (message == null) {
             return null;
         }
-        String hexMessage = this.translateHexColorCodes("#", "", message);
+        String hexMessage = this.translateHexColorCodes("#", message);
         return ChatColor.translateAlternateColorCodes('&', hexMessage);
     }
 
-    public String translateHexColorCodes(String startTag, String endTag, String message)
+    public String translateHexColorCodes(String startTag, String message)
     {
-        final Pattern hexPattern = Pattern.compile(startTag + "([A-Fa-f0-9]{6})" + endTag);
+        final Pattern hexPattern = Pattern.compile(startTag + "([A-Fa-f0-9]{6})");
         Matcher matcher = hexPattern.matcher(message);
         StringBuffer buffer = new StringBuffer(message.length() + 4 * 8);
-        while (matcher.find())
-        {
+        while (matcher.find()) {
             String group = matcher.group(1);
             matcher.appendReplacement(buffer, COLOR_CHAR + "x"
                     + COLOR_CHAR + group.charAt(0) + COLOR_CHAR + group.charAt(1)
@@ -38,7 +38,7 @@ public class StringUtils {
     public String listToString(ArrayList<String> list) {
         StringBuilder newLore = new StringBuilder();
         for (String s : list) {
-            newLore.append("\n").append(s);
+            newLore.append(s).append("\n");
         }
         return newLore.toString();
     }

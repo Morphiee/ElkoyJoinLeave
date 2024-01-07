@@ -9,15 +9,10 @@ import gg.morphie.elkoyjoinleave.util.playerdata.PlayerDataManager;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.Listener;
-import org.bukkit.inventory.ItemStack;
-import org.bukkit.inventory.meta.ItemMeta;
-import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.util.StringUtil;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-import java.util.function.BiConsumer;
 
 public class MainMenu implements Listener {
     private ElkoyJoinLeave plugin;
@@ -53,7 +48,6 @@ public class MainMenu implements Listener {
                     .replace("%JOIN%", new MenuFilterManager(plugin).getTag("Join", p.getUniqueId()))
                     .replace("%LEAVE%", new MenuFilterManager(plugin).getTag("Leave", p.getUniqueId())));
         }
-        Bukkit.getConsoleSender().sendMessage(String.valueOf(filterLore));
         gui.addElement(new DynamicGuiElement('1', (viewer) -> new StaticGuiElement('d', new ItemStackUtils(plugin).createItem(plugin.getConfig().getString("FilterItem.ItemName"), 1, plugin.getConfig().getInt("FilterItem.CustomModelID"), null, null, false),
                 (GuiElement.Action) click -> {
                     String playerCurrentFilter = new PlayerDataManager(plugin).getString(uuid, "CurrentFilter");
@@ -84,10 +78,9 @@ public class MainMenu implements Listener {
                 String[] parts = baseMessage.split(":");
                 String title = parts[0];
                 String message = parts[1].replace("%PLAYER%", p.getName());
-                String material = parts[2];
-                String modelid = parts[3];
+                String material;
                 String permission = parts[4];
-                int modelData = Integer.parseInt(modelid);
+                int modelData;
                 String type = "&cBroken";
                 String status;
                 if (JoinMessages.contains(AllMessages.get(i))) {
@@ -95,18 +88,25 @@ public class MainMenu implements Listener {
                 } else if (LeaveMessages.contains(AllMessages.get(i))) {
                     type = this.plugin.getConfig().getString("Settings.Colors.LeaveColor") + "Leave";
                 }
-                
+
                 if (p.hasPermission("elcore.messages." + permission)) {
                     status = plugin.getConfig().getString("Settings.Colors.UnlockedStatusColor") + "Unlocked";
                 } else {
                     status = plugin.getConfig().getString("Settings.Colors.LockedStatusColor") + "Locked";
                 }
 
+                if (this.plugin.getConfig().getBoolean("LockMessages.Enabled") && status.contains("Locked")) {
+                    material = this.plugin.getConfig().getString("LockMessages.Material");
+                    modelData = this.plugin.getConfig().getInt("LockMessages.CustomModelID");
+                } else {
+                    material = parts[2];
+                    modelData = Integer.parseInt(parts[3]);
+                }
+
                 ArrayList<String> messageLore = new ArrayList();
                 for (String s : plugin.getMessageList("Menu.MessageItem.Lore")) {
                     messageLore.add(s.replace("%TYPE%", type).replace("%MESSAGE%", message));
                 }
-                Bukkit.getConsoleSender().sendMessage(new StringUtils().listToString(messageLore));
                 group.addElement(new DynamicGuiElement('g', (viewer) -> // returning false will not cancel the initial click event to the gui
                         new StaticGuiElement('g', new ItemStackUtils(plugin).createItem(material, 1, modelData, message, null, false),
                                 click -> {

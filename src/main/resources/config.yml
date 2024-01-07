@@ -80,7 +80,7 @@ FilterItem:
   # Below you can determine if you want the messages to have a different material when they are locked.
   # You can also change the name and lore of the locked version in the messages.yml.
   LockMessages:
-    Enable: true
+    Enabled: true
     Glow: true
     Material: 'BARRIER'
     CustomModelID: 0

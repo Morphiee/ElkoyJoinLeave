@@ -101,16 +101,5 @@ public class Messages implements Listener {
         list3.add(" ");
         list3.add("&b➥ Click to set this as your %TYPE% &bmessage.");
         cfg.addDefault("Menu.MessageItem.Lore", list3);
-        cfg.addDefault("Menu.LockedItem.Title", "&c&l%TITLE% &8(%STATUS%&8)");
-        List<String> list4 = new ArrayList<String>();
-        list4.add(" ");
-        list4.add("&b&l| &3&lType&8: %TYPE%");
-        list4.add(" ");
-        list4.add("&aYou can unlock this message");
-        list4.add("&avia /coinshop command.");
-        list4.add(" ");
-        list4.add("&b&l| &3&lMessage Preview&8:");
-        list4.add("%MESSAGE%");
-        cfg.addDefault("Menu.LockedItem.lore", list4);
     }
 }

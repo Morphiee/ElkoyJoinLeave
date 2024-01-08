@@ -33,11 +33,12 @@ Settings:
 # This will be the join message that is used at default.
 DefaultJoinMessage: "&8&l[&a&l✔&8&l] &a%PLAYER%"
 
-# The messages below are formatted as so. "TITLE:MESSAGE:MATERIAL:MODELID:PERMISSION"
+# The messages below are formatted as so. "TITLE:MESSAGE:MATERIAL:MODELID:PERMISSION:GLOW"
 # PERMISSION is elcore.messages.PERMISSION
+# GLOW is if the item will appear enchanted in the menu. Can be "True" or "False"
 JoinMessages:
-  - "&3&lSwinging:&a&l%PLAYER% came in swinging!:PAPER:1:swinging"
-  - "&3&lBetter:&a&lEverything is always better with %PLAYER%:PAPER:1:better"
+  - "&3&lSwinging:&a&l%PLAYER% came in swinging!:PAPER:1:swinging:True"
+  - "&3&lBetter:&a&lEverything is always better with %PLAYER%:PAPER:1:better:True"
 
 #============================================================================================================================|
 
@@ -46,11 +47,12 @@ JoinMessages:
 # This will be the leave message that is used at default.
 DefaultLeaveMessage: "&8&l[&c&l✗&8&l] &c%PLAYER%"
 
-# The messages below are formatted as so. "TITLE:MESSAGE:MATERIAL:MODELID:PERMISSION"
+# The messages below are formatted as so. "TITLE:MESSAGE:MATERIAL:MODELID:PERMISSION:GLOW"
 # PERMISSION is elcore.messages.PERMISSION
+# GLOW is if the item will appear enchanted in the menu. Can be "True" or "False"
 LeaveMessages:
-  - "&3&lDust:&c&l%PLAYER% bit the dust!:PAPER:1:dust"
-  - "&3&lALT+F4:&c&l%PLAYER% used ALT + F4:PAPER:1:altf4"
+  - "&3&lDust:&c&l%PLAYER% bit the dust!:PAPER:1:dust:True"
+  - "&3&lALT+F4:&c&l%PLAYER% used ALT + F4:PAPER:1:altf4:True"
 
 #============================================================================================================================|
 
@@ -77,10 +79,10 @@ FilterItem:
   CustomModelID: 0
   ItemName: "ARROW"
 
-  # Below you can determine if you want the messages to have a different material when they are locked.
-  # You can also change the name and lore of the locked version in the messages.yml.
-  LockMessages:
-    Enable: true
-    Glow: true
-    Material: 'BARRIER'
-    CustomModelID: 0
+# Below you can determine if you want the messages to have a different material when they are locked.
+# You can also change the name and lore of the locked version in the messages.yml.
+LockMessages:
+  Enabled: true
+  Glow: false
+  Material: 'BARRIER'
+  CustomModelID: 0

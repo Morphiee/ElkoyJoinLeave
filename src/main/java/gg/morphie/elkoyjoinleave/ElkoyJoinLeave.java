@@ -1,6 +1,8 @@
 package gg.morphie.elkoyjoinleave;
 
 import gg.morphie.elkoyjoinleave.commands.CommandHandler;
+import gg.morphie.elkoyjoinleave.events.JoinEvent;
+import gg.morphie.elkoyjoinleave.events.LeaveEvent;
 import gg.morphie.elkoyjoinleave.events.PlayerDataEvents;
 import gg.morphie.elkoyjoinleave.files.Messages;
 import gg.morphie.elkoyjoinleave.util.StringUtils;
@@ -14,16 +16,21 @@ import java.util.Objects;
 import java.util.logging.Logger;
 
 public class ElkoyJoinLeave extends JavaPlugin implements Listener {
-    public static Logger log = Logger.getLogger("Minecraft");
     public java.lang.String Version = "1.0.0";
     public Messages messagescfg;
     private PlayerDataEvents pe;
+    private JoinEvent je;
+    private LeaveEvent le;
 
     public void onEnable() {
         Objects.requireNonNull(getCommand("messages")).setExecutor(new CommandHandler(this));
         this.pe = new PlayerDataEvents(this);
+        this.je = new JoinEvent(this);
+        this.le = new LeaveEvent(this);
         getServer().getPluginManager().registerEvents(this, this);
         getServer().getPluginManager().registerEvents(this.pe, this);
+        getServer().getPluginManager().registerEvents(this.je, this);
+        getServer().getPluginManager().registerEvents(this.le, this);
         Version = this.getDescription().getVersion();
         loadConfigManager();
         getServer().getConsoleSender().sendMessage(new StringUtils().addColor(this.getMessage("Startup.Line1")));

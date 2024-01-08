@@ -60,7 +60,7 @@ public class Messages implements Listener {
 
     private void addDefaults(FileConfiguration cfg) {
         // Start up Messages for console
-        cfg.addDefault("Startup.Line1", " &3___________      ____.____ ");
+        cfg.addDefault("Startup.Line1", "&3___________      ____.____ ");
         cfg.addDefault("Startup.Line2", "&3\\_   _____/     |    |    |          &aPlugin Version&8: &b" + this.plugin.Version);
         cfg.addDefault("Startup.Line3", "  &3|    __)_     |    |    |          &aAuthor&8: &bMorphie");
         cfg.addDefault("Startup.Line4", "  &3|        \\/\\__|    |    |___");
@@ -73,9 +73,11 @@ public class Messages implements Listener {
         cfg.addDefault("Startup.CleanerNoneCleared", "&aPlayerData Cleaner&8: &cNo files cleared.");
         cfg.addDefault("Startup.CleanerCleared", "&aPlayerData Cleaner&8: &2Successfully cleared %FILES_DELETED% files.");
         cfg.addDefault("ErrorPrefix", "&8&l[&c&l!&8&l] ");
+        cfg.addDefault("Prefix", "&3&lElkoyMessages &b➥ ");
         cfg.addDefault("ConsoleSenderError", "&cOnly a player can send this message!");
         cfg.addDefault("NoPermsMessage", "&cInvalid permissions!");
         cfg.addDefault("ReloadMessage", "&aPlugin has been successfully reloaded!");
+        cfg.addDefault("MessageSet", "&a%TYPE% message successfully set!");
 
         // GUI Messages
         cfg.addDefault("Menu.Title", "&3&lElkoyJoinLeave Messages");
@@ -101,5 +103,16 @@ public class Messages implements Listener {
         list3.add(" ");
         list3.add("&b➥ Click to set this as your %TYPE% &bmessage.");
         cfg.addDefault("Menu.MessageItem.Lore", list3);
+        cfg.addDefault("Menu.LockedItem.Title", "&c&l%TITLE% &8(%STATUS%&8)");
+        List<String> list4 = new ArrayList<String>();
+        list4.add(" ");
+        list4.add("&b&l| &3&lType&8: %TYPE%");
+        list4.add(" ");
+        list4.add("&aYou can unlock this message");
+        list4.add("&avia /coinshop command.");
+        list4.add(" ");
+        list4.add("&b&l| &3&lMessage Preview&8:");
+        list4.add("%MESSAGE%");
+        cfg.addDefault("Menu.LockedItem.Lore", list4);
     }
 }

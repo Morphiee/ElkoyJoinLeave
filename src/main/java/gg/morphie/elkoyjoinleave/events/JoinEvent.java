@@ -25,7 +25,13 @@ public class JoinEvent implements Listener {
         Player p = e.getPlayer();
         UUID uuid = p.getUniqueId();
         List<String> JoinMessages = this.plugin.getConfig().getStringList("JoinMessages");
-        if (JoinMessages.contains(new PlayerDataManager(plugin).getString(uuid, "CurrentJoinMessage"))) {
+        boolean hasMessage = false;
+        for (String baseMessage : JoinMessages) {
+            String[] parts = baseMessage.split(":");
+            hasMessage = parts[1].equals(new PlayerDataManager(plugin).getString(uuid, "CurrentJoinMessage"));
+            break;
+        }
+        if (hasMessage) {
             Bukkit.broadcastMessage(new StringUtils().addColor(new PlayerDataManager(plugin).getString(uuid, "CurrentJoinMessage").replace("%PLAYER%", e.getPlayer().getName())));
         } else {
             Bukkit.broadcastMessage(new StringUtils().addColor(plugin.getConfig().getString("DefaultJoinMessage").replace("%PLAYER%", e.getPlayer().getName())));

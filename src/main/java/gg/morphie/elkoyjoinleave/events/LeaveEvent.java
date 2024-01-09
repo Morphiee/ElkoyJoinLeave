@@ -25,10 +25,16 @@ public class LeaveEvent implements Listener {
         Player p = e.getPlayer();
         UUID uuid = p.getUniqueId();
         List<String> LeaveMessages = this.plugin.getConfig().getStringList("LeaveMessages");
-        if (LeaveMessages.contains(new PlayerDataManager(plugin).getString(uuid, "CurrentLeaveMessage"))) {
+        boolean hasMessage = false;
+        for (String baseMessage : LeaveMessages) {
+            String[] parts = baseMessage.split(":");
+            hasMessage = parts[1].equals(new PlayerDataManager(plugin).getString(uuid, "CurrentLeaveMessage"));
+            break;
+        }
+        if (hasMessage) {
             Bukkit.broadcastMessage(new StringUtils().addColor(new PlayerDataManager(plugin).getString(uuid, "CurrentLeaveMessage").replace("%PLAYER%", e.getPlayer().getName())));
         } else {
-            Bukkit.broadcastMessage(new StringUtils().addColor(this.plugin.getConfig().getString("DefaultLeaveMessage").replace("%PLAYER%", e.getPlayer().getName())));
+            Bukkit.broadcastMessage(new StringUtils().addColor(plugin.getConfig().getString("DefaultLeaveMessage").replace("%PLAYER%", e.getPlayer().getName())));
         }
     }
 }

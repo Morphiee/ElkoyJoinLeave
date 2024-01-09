@@ -125,9 +125,9 @@ public class MainMenu implements Listener {
                                     if (click.getType().isLeftClick()) {
                                         if (status.contains("Unlocked")) {
                                             if (type.equalsIgnoreCase(this.plugin.getConfig().getString("Settings.Colors.JoinColor") + "Join")) {
-                                                new PlayerDataManager(plugin).setString(uuid, "CurrentJoinMessage", message);
+                                                new PlayerDataManager(plugin).setString(uuid, "CurrentJoinMessage", parts[1]);
                                             } else {
-                                                new PlayerDataManager(plugin).setString(uuid, "CurrentLeaveMessage", message);
+                                                new PlayerDataManager(plugin).setString(uuid, "CurrentLeaveMessage", parts[1]);
                                             }
                                             p.sendMessage(new StringUtils().addColor(plugin.getMessage("Prefix") + plugin.getMessage("MessageSet").replace("%TYPE%", type)));
                                             return true;
@@ -182,7 +182,7 @@ public class MainMenu implements Listener {
                                 click -> {
                                     if (click.getType().isLeftClick()) {
                                         if (status.contains("Unlocked")) {
-                                            new PlayerDataManager(plugin).setString(uuid, "CurrentJoinMessage", message);
+                                            new PlayerDataManager(plugin).setString(uuid, "CurrentJoinMessage", parts[1]);
                                             p.sendMessage(new StringUtils().addColor(plugin.getMessage("Prefix") + plugin.getMessage("MessageSet").replace("%TYPE%", type)));
                                             return true;
                                         }
@@ -236,7 +236,7 @@ public class MainMenu implements Listener {
                                 click -> {
                                     if (click.getType().isLeftClick()) {
                                         if (status.contains("Unlocked")) {
-                                            new PlayerDataManager(plugin).setString(uuid, "CurrentLeaveMessage", message);
+                                            new PlayerDataManager(plugin).setString(uuid, "CurrentLeaveMessage", parts[1]);
                                             p.sendMessage(new StringUtils().addColor(plugin.getMessage("Prefix") + plugin.getMessage("MessageSet").replace("%TYPE%", type)));
                                             return true;
                                         }
